@@ -1,8 +1,9 @@
 <h1>Tasks List</h1>
 <ul>
 <% @tasks.each { |task| %>
-  <li><%= link_to task.title,  "tasks/#{task.title}"%>
-  | <%= link_to "- X", task_path(task.title), method: :delete %></li>
+  <li>
+  | <%= link_to "- X", { controller: "tasks", action: "destroy", title: task.title },  data: { confirm: 'Are you sure?' },
+  method: :delete %></li>
 <% } %>
 </ul>
 

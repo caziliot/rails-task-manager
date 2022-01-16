@@ -36,7 +36,6 @@ class TasksController < ApplicationController
     redirect_to task_path(@task2.title)
   end
 
-
   private
 
   def task_params

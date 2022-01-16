@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   get 'tasks', to: 'tasks#index', as: :index
   get 'tasks/new', to: 'tasks#new'
+  get 'tasks/:title', to: 'tasks#show', as: :task
   post 'tasks', to: 'tasks#create'
   get 'tasks/:title/edit', to: 'tasks#edit', as: :edit
-  get 'tasks/:title', to: 'tasks#show', as: :task
   patch 'tasks/:title', to: 'tasks#update'
-  delete 'tasks/:title', to: 'tasks#destroy'
+  delete 'tasks/:title', to: 'tasks#destroy', as: :destroy
 end

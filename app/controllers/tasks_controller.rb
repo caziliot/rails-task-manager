@@ -1,3 +1,5 @@
+# Doc comment
+#
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
@@ -26,14 +28,14 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task2 = Task.find_by(title: params[:title])
+    @task = Task.find_by(title: params[:title])
   end
 
   def update
-    @task2 = Task.find_by(title: params[:task][:title])
-    @task2.update(task_params)
+    @task = Task.find_by(title: params[:task][:title])
+    @task.update(task_params)
 
-    redirect_to task_path(@task2.title)
+    redirect_to task_path(@task.title)
   end
 
   private
